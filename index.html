@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nvrsaynvr.com - For Sale</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231A1A1A'/><text x='50' y='68' font-size='28' text-anchor='middle' font-family='system-ui' font-weight='bold' fill='%23fff'>NVR</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #1A1A1A;
+            --white: #FFFFFF;
+            --gray: #666666;
+            --light-gray: #F5F5F5;
+            --red: #A52A2A;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1.5rem;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Logo */
+        .logo {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .domain {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 0.1em;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 0.8s ease-out 0.1s backwards;
+        }
+
+        .tagline {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--gray);
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease-out 0.15s backwards;
+        }
+
+        /* Price card */
+        .price-card {
+            background: var(--light-gray);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .price-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            letter-spacing: 0.02em;
+            color: var(--black);
+        }
+
+        /* Contact form */
+        .form-card {
+            background: var(--light-gray);
+            border-radius: 1rem;
+            padding: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.3s backwards;
+        }
+
+        .form-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            background: var(--white);
+            border: 1px solid #DDD;
+            border-radius: 0.5rem;
+            color: var(--black);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #999;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--red);
+            box-shadow: 0 0 0 3px rgba(165, 42, 42, 0.1);
+        }
+
+        textarea {
+            resize: none;
+            min-height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--black);
+            border: none;
+            border-radius: 0.5rem;
+            color: var(--white);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.25rem;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 0.5rem;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .success {
+            background: #2E7D32 !important;
+        }
+
+        /* Footer */
+        footer {
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hidden honeypot */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <div class="container">
+            
+            <img src="logo.png" alt="NVR SAY NVR" class="logo">
+            <p class="domain">nvrsaynvr.com</p>
+            <p class="tagline">This domain is for sale</p>
+            
+            <div class="price-card">
+                <p class="price-label">Asking price</p>
+                <p class="price">€250.000</p>
+            </div>
+
+            <div class="form-card">
+                <span class="form-label">Interested? Get in touch</span>
+                
+                <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="63eddcc8-7d87-4b05-a1d4-267ec15d3c5c">
+                    <input type="hidden" name="subject" value="Offer on nvrsaynvr.com">
+                    <input type="hidden" name="from_name" value="nvrsaynvr.com Website">
+                    <input type="checkbox" name="botcheck" class="hidden">
+                    
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="offer" placeholder="Your offer (optional)">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your message (optional)" rows="3"></textarea>
+                    </div>
+                    <button type="submit">SUBMIT</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 nvrsaynvr.com</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            submitButton.disabled = true;
+            submitButton.textContent = 'SENDING...';
+
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    submitButton.textContent = 'THANK YOU!';
+                    submitButton.classList.add('success');
+                    form.reset();
+
+                    setTimeout(() => {
+                        submitButton.disabled = false;
+                        submitButton.textContent = originalButtonText;
+                        submitButton.classList.remove('success');
+                    }, 3000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                submitButton.textContent = 'TRY AGAIN';
+                submitButton.disabled = false;
+                alert('Something went wrong. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>
