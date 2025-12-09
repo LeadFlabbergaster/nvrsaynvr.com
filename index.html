@@ -23,72 +23,104 @@
             --red: #A52A2A;
         }
 
+        html, body {
+            height: 100%;
+        }
+
         body {
             font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--white);
             color: var(--black);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
 
-        main {
+        .page {
+            display: flex;
+            min-height: 100%;
+        }
+
+        /* Left side - Logo area */
+        .brand-side {
+            flex: 1;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brand-side::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: linear-gradient(135deg, transparent 40%, rgba(165, 42, 42, 0.03) 100%);
+            pointer-events: none;
+        }
+
+        .logo-container {
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .logo {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+        }
+
+        .brand-tagline {
+            margin-top: 2rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.25rem;
+            letter-spacing: 0.3em;
+            color: var(--gray);
+        }
+
+        /* Right side - Form area */
+        .content-side {
             flex: 1;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            padding: 3rem 1.5rem;
-        }
-
-        .container {
+            padding: 3rem;
             max-width: 500px;
-            width: 100%;
-            text-align: center;
-        }
-
-        /* Logo */
-        .logo {
-            max-width: 280px;
-            width: 100%;
-            height: auto;
-            margin-bottom: 1rem;
-            animation: fadeInUp 0.8s ease-out;
         }
 
         .domain {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            letter-spacing: 0.1em;
-            color: var(--gray);
-            margin-bottom: 0.5rem;
-            animation: fadeInUp 0.8s ease-out 0.1s backwards;
+            font-size: 2rem;
+            letter-spacing: 0.05em;
+            color: var(--black);
+            margin-bottom: 0.25rem;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .tagline {
             font-size: 0.875rem;
             text-transform: uppercase;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.2em;
             color: var(--gray);
-            margin-bottom: 3rem;
-            animation: fadeInUp 0.8s ease-out 0.15s backwards;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.1s backwards;
         }
 
-        /* Price card */
-        .price-card {
-            background: var(--light-gray);
-            border-radius: 1rem;
-            padding: 2rem;
+        /* Price */
+        .price-section {
             margin-bottom: 2rem;
             animation: fadeInUp 0.8s ease-out 0.2s backwards;
         }
 
         .price-label {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
             color: var(--gray);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
         }
 
         .price {
@@ -99,35 +131,32 @@
         }
 
         /* Contact form */
-        .form-card {
-            background: var(--light-gray);
-            border-radius: 1rem;
-            padding: 2rem;
+        .form-section {
             animation: fadeInUp 0.8s ease-out 0.3s backwards;
         }
 
         .form-label {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
             color: var(--gray);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             display: block;
         }
 
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
         input, textarea {
             width: 100%;
-            padding: 1rem 1.25rem;
-            background: var(--white);
-            border: 1px solid #DDD;
+            padding: 0.875rem 1rem;
+            background: var(--light-gray);
+            border: 1px solid #E5E5E5;
             border-radius: 0.5rem;
             color: var(--black);
             font-family: inherit;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
 
@@ -143,7 +172,7 @@
 
         textarea {
             resize: none;
-            min-height: 100px;
+            min-height: 80px;
         }
 
         button {
@@ -154,7 +183,7 @@
             border-radius: 0.5rem;
             color: var(--white);
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             letter-spacing: 0.1em;
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -181,19 +210,24 @@
         }
 
         /* Footer */
-        footer {
-            padding: 1.5rem;
+        .footer {
+            margin-top: 2rem;
             text-align: center;
             color: var(--gray);
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             letter-spacing: 0.1em;
         }
 
         /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
@@ -205,23 +239,56 @@
         .hidden {
             display: none !important;
         }
+
+        /* Mobile: stack vertically */
+        @media (max-width: 900px) {
+            .page {
+                flex-direction: column;
+            }
+
+            .brand-side {
+                padding: 2rem;
+                min-height: auto;
+            }
+
+            .logo {
+                max-width: 200px;
+            }
+
+            .brand-tagline {
+                margin-top: 1rem;
+                font-size: 1rem;
+            }
+
+            .content-side {
+                max-width: 100%;
+                padding: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <main>
-        <div class="container">
-            
-            <img src="logo.png" alt="NVR SAY NVR" class="logo">
-            <p class="domain">nvrsaynvr.com</p>
+    <div class="page">
+        <!-- Left: Brand/Logo -->
+        <div class="brand-side">
+            <div class="logo-container">
+                <img src="logo.png" alt="NVR SAY NVR" class="logo">
+                <p class="brand-tagline">NEVER SAY NEVER</p>
+            </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="content-side">
+            <h1 class="domain">nvrsaynvr.com</h1>
             <p class="tagline">This domain is for sale</p>
             
-            <div class="price-card">
+            <div class="price-section">
                 <p class="price-label">Asking price</p>
                 <p class="price">€250.000</p>
             </div>
 
-            <div class="form-card">
+            <div class="form-section">
                 <span class="form-label">Interested? Get in touch</span>
                 
                 <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
@@ -246,12 +313,9 @@
                 </form>
             </div>
 
+            <p class="footer">© 2025 nvrsaynvr.com</p>
         </div>
-    </main>
-
-    <footer>
-        <p>© 2025 nvrsaynvr.com</p>
-    </footer>
+    </div>
 
     <script>
         const form = document.getElementById('contact-form');
